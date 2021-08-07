@@ -27,14 +27,17 @@
     <script type="text/babel">
       // 리액트는 버튼은 바뀌지 않고 숫자만 바뀜
       const rootElement = document.getElementById("root");
+
       function random() {
         const number = Math.floor(Math.random() * (10 - 1) + 1);
+        const tick = new Date().toLocaleTimeString();
         const element = (
           <>
             <button children={number} />
             <div>
               <p>{number}</p>
             </div>
+            <h2>It is {tick}</h2>
           </>
         );
         ReactDOM.render(element, rootElement);
