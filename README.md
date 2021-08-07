@@ -18,3 +18,9 @@ Created with CodeSandbox
 ## 04. 멀티 Element 생성하기
 
 - Fragment - React.Fragment 또는 <></>
+
+## 05. Element 찍어내기
+
+- Functino - 재사용 가능한 Element
+- Custom Element - Upper case
+- Children - 개수 무제한

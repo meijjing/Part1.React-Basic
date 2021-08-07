@@ -20,7 +20,7 @@
     <script type="text/babel">
       const rootElement = document.getElementById("root");
 
-      // ** element 생성하기 **
+      // ** 03. element 생성하기 **
       // const text = "Hello, world!";
       // const titleClassName = "title123";
 
@@ -33,17 +33,45 @@
 
       // const element = <h1 className={titleClassName}>{text}</h1>;
 
-      // ** 멀티 element 생성하기 **
+      // ** 04. 멀티 element 생성하기 **
+      // React.Fragment - 부모로 묶어주는 역할(자식 그룹화) <></>이렇게 생략가능
+
+      // const element = (
+      //   // <React.Fragment
+      //   //   children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>Children</h5>]}
+      //   // />
+      //   <React.Fragment>
+      //     <h1>Hi</h1>
+      //     <h3>Bye</h3>
+      //     <h5>Children</h5>
+      //   </React.Fragment>
+      // );
+
+      const paint = (title, desc) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{desc}</h3>
+        </>
+      );
+
+      const Paint = ({ title, desc, children }) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{desc}</h3>
+          {children}
+        </>
+      );
+
       const element = (
-        // React.Fragment - 부모로 묶어주는 역할(자식 그룹화) <></>이렇게 생략가능
-        // <React.Fragment
-        //   children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>Children</h5>]}
-        // />
-        <React.Fragment>
-          <h1>Hi</h1>
-          <h3>Bye</h3>
-          <h5>Children</h5>
-        </React.Fragment>
+        <>
+          {paint("Good", "good")}
+          {paint("Bad", "bad")}
+          <Paint title="So so" desc="so so" />
+          <Paint title="Wow" desc="wow">
+            <span>이건 children 이야</span>
+            <Paint title="함수안에 함수 사용 가능!" />
+          </Paint>
+        </>
       );
 
       ReactDOM.render(element, rootElement);
