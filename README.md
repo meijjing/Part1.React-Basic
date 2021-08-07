@@ -56,3 +56,18 @@ Created with CodeSandbox
 > - 변경 사항 반영 - 리액트에게 일임
 > - 리액트의 비교 - Reconciliation
 > - Virtual Dom - 비교시 활용
+
+## 10. 이벤트 핸들러 써보기
+
+- 바닐라 JS
+
+  - addEventListener
+  - on{event} onclick onmouseout onfocus onblur...
+
+- 리액트 (카멜케이스)
+  - on{Event} onClick onMouseOut onFocus onBlur...
+
+> 카멜 케이스 onClick
+> 파스칼 케이스 OnClick
+> 케밥 케이스 on-click
+> 스네이크 케이스 on_click
