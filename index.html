@@ -77,15 +77,23 @@
           </Paint>
           <Text text="Text" />
           <Text text="text" />
-          <Number number="4" selected />
-          <Number number="5" />
           {[1, 2, 3, 4, 5].map((number) => (
-            <Number number={number} selected={number === 3} />
+            <Number
+              className="title"
+              key={number}
+              number={number}
+              selected={number === 3}
+            />
           ))}
         </>
       );
 
       ReactDOM.render(element, rootElement);
     </script>
+    <style>
+      .title {
+        color: red;
+      }
+    </style>
   </body>
 </html>
