@@ -71,3 +71,9 @@ Created with CodeSandbox
 > 파스칼 케이스 OnClick
 > 케밥 케이스 on-click
 > 스네이크 케이스 on_click
+
+## 11. 이벤트 핸들러 써보기 2 (여러가지 시도해보기)
+
+- 간단한 검색창 만들기
+- Object.assign - 객체 내용 복사 (바뀐부분만 덮어쓰기)
+- 전역 변수 변경 - ReactDOM.render
