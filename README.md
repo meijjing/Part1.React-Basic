@@ -8,3 +8,9 @@ Created with CodeSandbox
 - Vailla js Dom - W3Schools / createElement
 - CDN - unpkg
 - React / React-dom - element생성 / appendChild
+
+## 03. JSX과 Babel , JSX 다루기
+
+- JSX - React.createElement 표현식
+- Babel - JavaScript Compiler
+- JSX 다루기 - spread 연산자
