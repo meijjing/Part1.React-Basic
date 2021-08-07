@@ -5,95 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>React-Basic</title>
-    <script
-      crossorigin
-      src="https://unpkg.com/react@17/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="text/babel">
-      const rootElement = document.getElementById("root");
-
-      // ** 03. element 생성하기 **
-      // const text = "Hello, world!";
-      // const titleClassName = "title123";
-
-      // const props = { className: titleClassName, children: text };
-      // // const customH1 = <h1 {...props} />;
-      // const customH1 = (
-      //   <h1 className={props.className} children={props.children} />
-      // );
-      // const element = customH1;
-
-      // const element = <h1 className={titleClassName}>{text}</h1>;
-
-      // ** 04. 멀티 element 생성하기 **
-      // React.Fragment - 부모로 묶어주는 역할(자식 그룹화) <></>이렇게 생략가능
-
-      // const element = (
-      //   // <React.Fragment
-      //   //   children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>Children</h5>]}
-      //   // />
-      //   <React.Fragment>
-      //     <h1>Hi</h1>
-      //     <h3>Bye</h3>
-      //     <h5>Children</h5>
-      //   </React.Fragment>
-      // );
-
-      // 05. Element 찍어내기
-      const Paint = ({ title, desc, children }) => (
-        <>
-          <h1>{title}</h1>
-          <h3>{desc}</h3>
-          {children}
-        </>
-      );
-
-      // 06. JS와 JSX 섞어쓰기
-      const Text = ({ text }) => {
-        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
-        if (text.charAt(0) === text.charAt(0).toUpperCase()) {
-          return <h1>{text}</h1>; // <jsx> & {js} & <jsx>
-        } else {
-          return <h3>{text}</h3>;
-        }
-      };
-      const Number = ({ number, selected }) =>
-        // number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
-        selected ? <h1>{number}</h1> : <h3>{number}</h3>;
-
-      const element = (
-        <>
-          <Paint title="Wow" desc="wow">
-            <span>이건 children 이야</span>
-            <Paint title="함수안에 함수 사용 가능!" />
-          </Paint>
-          <Text text="Text" />
-          <Text text="text" />
-          {[1, 2, 3, 4, 5].map((number) => (
-            <Number
-              className="title"
-              key={number}
-              number={number}
-              selected={number === 3}
-            />
-          ))}
-        </>
-      );
-
-      ReactDOM.render(element, rootElement);
-    </script>
-    <style>
-      .title {
-        color: red;
-      }
-    </style>
+    <h1>Part1. React-Basic</h1>
+    <ol>
+      <li><a href="React-Basic01~07.html">React-Basic01~07</a></li>
+      <li><a href="React-Basic08~12.html">React-Basic08~12</a></li>
+    </ol>
   </body>
 </html>

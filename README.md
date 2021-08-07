@@ -28,3 +28,12 @@ Created with CodeSandbox
 ## 06. JS와 JSX 섞어쓰기
 
 - Interpolation - 이미 HTML에서도 쓰고 있었다.
+
+## 07. 중간 복습1
+
+- console.log(element)
+
+## 08. 리액트의 리랜더링 알아보기
+
+- 바닐라 JS - 변경으로 인해 Element를 다시 그림
+- React - 변경된 부분만 다시 그림
