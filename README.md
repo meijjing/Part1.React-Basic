@@ -24,3 +24,7 @@ Created with CodeSandbox
 - Functino - 재사용 가능한 Element
 - Custom Element - Upper case
 - Children - 개수 무제한
+
+## 06. JS와 JSX 섞어쓰기
+
+- Interpolation - 이미 HTML에서도 쓰고 있었다.

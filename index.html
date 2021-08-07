@@ -47,13 +47,7 @@
       //   </React.Fragment>
       // );
 
-      const paint = (title, desc) => (
-        <>
-          <h1>{title}</h1>
-          <h3>{desc}</h3>
-        </>
-      );
-
+      // 05. Element 찍어내기
       const Paint = ({ title, desc, children }) => (
         <>
           <h1>{title}</h1>
@@ -62,15 +56,32 @@
         </>
       );
 
+      // 06. JS와 JSX 섞어쓰기
+      const Text = ({ text }) => {
+        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
+        if (text.charAt(0) === text.charAt(0).toUpperCase()) {
+          return <h1>{text}</h1>; // <jsx> & {js} & <jsx>
+        } else {
+          return <h3>{text}</h3>;
+        }
+      };
+      const Number = ({ number, selected }) =>
+        // number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
+        selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+
       const element = (
         <>
-          {paint("Good", "good")}
-          {paint("Bad", "bad")}
-          <Paint title="So so" desc="so so" />
           <Paint title="Wow" desc="wow">
             <span>이건 children 이야</span>
             <Paint title="함수안에 함수 사용 가능!" />
           </Paint>
+          <Text text="Text" />
+          <Text text="text" />
+          <Number number="4" selected />
+          <Number number="5" />
+          {[1, 2, 3, 4, 5].map((number) => (
+            <Number number={number} selected={number === 3} />
+          ))}
         </>
       );
 
