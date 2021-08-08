@@ -77,3 +77,10 @@ Created with CodeSandbox
 - 간단한 검색창 만들기
 - Object.assign - 객체 내용 복사 (바뀐부분만 덮어쓰기)
 - 전역 변수 변경 - ReactDOM.render
+
+## 13. 컴포넌트 상태 다루기 (useState)
+
+- DOM - 논리트리
+- 컴포넌트 - 엘리먼트의 집합
+- 엘리먼트 - 요소
+- useState - 상태값을 관리해주는 훅
