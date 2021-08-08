@@ -83,4 +83,10 @@ Created with CodeSandbox
 - DOM - 논리트리
 - 컴포넌트 - 엘리먼트의 집합
 - 엘리먼트 - 요소
-- useState - 상태값을 관리해주는 훅
+- **useState - 상태값을 관리해주는 훅**
+
+## 14. 컴포넌트 사이드이펙트 다루기 (useEffect)
+
+- 사이드이펙트 = 부작용 의도하지 않은 효과 vs **부수 효과**
+- useState - lazy initialize
+- useEffect - dependency array
