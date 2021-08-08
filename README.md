@@ -90,3 +90,9 @@ Created with CodeSandbox
 - 사이드이펙트 = 부작용 의도하지 않은 효과 vs **부수 효과**
 - useState - lazy initialize
 - useEffect - dependency array
+- React.useEffect(() => {함수}, [effect를 이루어주고 싶은 대상, 생략가능])
+
+## 15. 커스텀 훅 만들기 use{Name}
+
+- 찍어내기/반복 => 함수화
+- useState/useEffect 등 훅 반복 => 커스텀 훅

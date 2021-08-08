@@ -14,23 +14,23 @@
     <script type="text/babel">
       const rootElement = document.getElementById("root");
 
-      const App = () => {
-        const [keyword, setKeyword] = React.useState(() => {
-          console.log("initialize");
-
-          return window.localStorage.getItem("keyword");
+      // 15. 커스텀 훅 만들기
+      function useLocalStorage(itemName, value = "") {
+        const [state, setState] = React.useState(() => {
+          return window.localStorage.getItem(itemName) || value;
         });
-        const [result, setResult] = React.useState("");
-        const [typing, setTyping] = React.useState(false);
 
-        console.log("render");
-
-        // 키워드 값이 바뀔때마다 부수적으로 스토리지에 값을 저장하고 싶다.
-        // React.useEffect(() => {함수}, [effect를 이루어주고 싶은 대상, 생략가능])
         React.useEffect(() => {
-          console.log("effect");
-          window.localStorage.setItem("keyword", keyword);
-        }, [keyword, typing]);
+          window.localStorage.setItem(itemName, state);
+        }, [state]);
+
+        return [state, setState];
+      }
+
+      const App = () => {
+        const [keyword, setKeyword] = useLocalStorage("keyword");
+        const [result, setResult] = useLocalStorage("result");
+        const [typing, setTyping] = useLocalStorage("typing", false);
 
         function handleChange(event) {
           setKeyword(event.target.value);
