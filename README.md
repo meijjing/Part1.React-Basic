@@ -96,3 +96,9 @@ Created with CodeSandbox
 
 - 찍어내기/반복 => 함수화
 - useState/useEffect 등 훅 반복 => 커스텀 훅
+
+## 16. Hookflow 이해하기 (App - Child)
+
+- 훅의 호출 타이밍을 알자
+- hook flow - hook들의 호출 타이밍
+- useState - setState시 prev값이 주입된다.

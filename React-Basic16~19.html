@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Basic</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      // 16. Hookflow 이해하기 (App - Child)
+      const App = () => {
+        console.log("APP render start");
+        // useState
+        const [show, setShow] = React.useState(() => {
+          console.log("APP useState");
+          return false;
+        });
+
+        function handleClick() {
+          // useState로 만들어진 set함수는 애초에 인자로 이전값(false)이 들어옴
+          setShow((prev) => !prev);
+          // show ? setShow(true) : setShow(false);
+        }
+
+        // useEffect - 선언 순어에 따라 호출의 순서가 바뀜
+        // render가 끝난 다음에 useEffect 동작
+        React.useEffect(() => {
+          console.log("APP useEffect, no deps"); // 모든 것에 반응
+        });
+        React.useEffect(() => {
+          console.log("APP useEffect, empty deps"); // 처음 렌더될 때만 반응
+        }, []);
+        React.useEffect(() => {
+          console.log("APP useEffect, show deps"); // deps값이 바뀔 때만 반응
+        }, [show]);
+
+        return (
+          <>
+            <button onClick={handleClick}>search</button>
+            {show ? (
+              <>
+                <input />
+                <p></p>
+              </>
+            ) : null}
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+      console.log("APP render end");
+    </script>
+  </body>
+</html>
