@@ -102,3 +102,9 @@ Created with CodeSandbox
 - 훅의 호출 타이밍을 알자
 - hook flow - hook들의 호출 타이밍
 - useState - setState시 prev값이 주입된다.
+
+## 17. Hookflow 이해하기 2 (App - Child)
+
+- useEffect - render가 끝난 뒤 실행 (자식요소 먼저 실행)
+- update시 - useEffect clean up실행 후, useEffect 실행
+- dependency array - 전달받은 값의 변화 있는 경우에만
