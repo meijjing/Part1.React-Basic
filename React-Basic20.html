@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Basic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        const inputRef = React.useRef();
+        const boxRef = React.useRef();
+        React.useEffect(() => {
+          inputRef.current.focus();
+          // document.getElementById("input").focus();
+
+          setTimeout(() => {
+            boxRef.current.style.backgroundColor = "pink";
+          }, 2000);
+        }, []);
+
+        return (
+          <>
+            <h1>Ref로 Dom 다루기 (useRef)</h1>
+            <input ref={inputRef} />
+            <div
+              style={{ height: 100, width: 200, backgroundColor: "brown" }}
+              ref={boxRef}
+            />
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>

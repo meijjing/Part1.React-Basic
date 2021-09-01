@@ -65,6 +65,7 @@ Created with CodeSandbox
   - on{event} onclick onmouseout onfocus onblur...
 
 - 리액트 (카멜케이스)
+
   - on{Event} onClick onMouseOut onFocus onBlur...
 
 > 카멜 케이스 onClick
@@ -92,7 +93,7 @@ Created with CodeSandbox
 - useEffect - dependency array
 - React.useEffect(() => {함수}, [effect를 이루어주고 싶은 대상, 생략가능])
 
-## 15. 커스텀 훅 만들기 use{Name}
+## 15. 커스텀 훅 만들기 use
 
 - 찍어내기/반복 => 함수화
 - useState/useEffect 등 훅 반복 => 커스텀 훅
@@ -112,5 +113,31 @@ Created with CodeSandbox
 ## 19. 리액트 Element에 스타일 입히기
 
 - className - 문자열
-- style - 객체, 카멜케이스, className보다 먼저
+- style - 객체, 카멜케이스, className보다 먼저 입혀짐
 - ex) `style={{ borderRadius: "50%" }}`
+
+## 20. Ref로 Dom 다루기 (useRef)
+
+- Vanilla JS -> document.get~ / document.query~
+- React -> useRef / ref
+- Input Element가 있고 화면이 뜨자마자 focus를 주고 싶다면? ( ?.focus( ) )
+- 왜 document.getElementById류를 사용하지 않고 useRef라는 별도의 방법을 제공할까?
+- document를 통하여 도달하면 비효율이 발생할 수 있다.
+
+## 21. Form 다루기 (기본 Form (label, input, submit))
+
+- onSubmit - event.preventDefault( ) (submit 막기)
+- event.target.elements - console.dir(event.target.elements)
+- for -> htmlFor, value -> defaultValue
+- console.dir( ) -> 요소를 json과 같은 트리구조로 출력
+
+## 22. Form 다루기 (uncontrolled vs controlled)
+
+- validation 검사 - onSubmit / onChange(더 간편)
+- controlled - input의 value값 직접 관리
+
+## 23. Error 다루기 (catch Error)
+
+- try {...} catch(error) {...}
+- ErrorBoundary - Catch Error 해서 보여주기
+- Fallback - Error가 났을때 보여줄 컴포넌트
