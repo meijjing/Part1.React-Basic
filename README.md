@@ -119,7 +119,7 @@ Created with CodeSandbox
 ## 20. Ref로 Dom 다루기 (useRef)
 
 - Vanilla JS -> document.get~ / document.query~
-- React -> useRef / ref
+- React -> **useRef / ref**
 - Input Element가 있고 화면이 뜨자마자 focus를 주고 싶다면? ( ?.focus( ) )
 - 왜 document.getElementById류를 사용하지 않고 useRef라는 별도의 방법을 제공할까?
 - document를 통하여 도달하면 비효율이 발생할 수 있다.
@@ -141,3 +141,19 @@ Created with CodeSandbox
 - try {...} catch(error) {...}
 - ErrorBoundary - Catch Error 해서 보여주기
 - Fallback - Error가 났을때 보여줄 컴포넌트
+
+## 25. Key와 리랜더링 알아보기
+
+- Key는 Value를 특정하는 이름
+- Key를 제대로 줘야 재사용 가능 (중복이 없고, 바뀌지 않는)
+
+## 27. 상태 끌어올리기 (State lifting up)
+
+- 로그인 폼 (id, pwd, btn) - id와 pwd 모두 입력되어 있을 때만 button이 enable 되도록 한다.
+- 형제 컴포넌츠의 상태 궁금 - 필요하면 부모로 lifting up
+- Props drilling - 과도한 lifting은 과도한 drilling을 야기
+
+## 28. 데이터 Fetch 해보기 (API Call)
+
+- Fetch API - 네트워크 통신도구
+- 상황별 핸들링 - 로딩 / 데이터 / 에러

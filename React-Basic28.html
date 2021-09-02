@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Basic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        const [data, setData] = React.useState(null);
+        const [error, setError] = React.useState(null);
+
+        React.useEffect(() => {
+          fetch(
+            "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json"
+          )
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (myJson) {
+              setData(myJson.data);
+            })
+            .catch((error) => {
+              setError(error);
+            });
+        }, []);
+
+        if (error != null) {
+          return <p>{error.message}</p>;
+        }
+
+        if (data == null) {
+          return <p>Loading...</p>;
+        }
+
+        return (
+          <>
+            <h1>데이터 Fetch 해보기 (API Call)</h1>
+            <p>People</p>
+            <p>{JSON.stringify(data, null, 2)}</p>
+            {data.people.map((person, index) => (
+              <div key={index}>
+                <span>name : {person.name} </span>
+                <span>age : {person.age}</span>
+              </div>
+            ))}
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>

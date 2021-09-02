@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Basic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const Id = ({ handleIdChange }) => {
+        return (
+          <>
+            <label htmlFor="id">ID : </label>
+            <input
+              type="text"
+              id="id"
+              placeholder="ID"
+              maxLength="16"
+              onChange={handleIdChange}
+            />
+          </>
+        );
+      };
+
+      const Pwd = ({ handlePwdChange }) => {
+        return (
+          <>
+            <label htmlFor="pwd">PASSWORD : </label>
+            <input
+              type="password"
+              id="pwd"
+              placeholder="PASSWORD"
+              maxLength="16"
+              onChange={handlePwdChange}
+            />
+          </>
+        );
+      };
+
+      const App = () => {
+        const [id, setId] = React.useState("");
+        const [pwd, setPwd] = React.useState("");
+
+        const handleIdChange = (event) => {
+          setId(event.target.value);
+        };
+
+        const handlePwdChange = (event) => {
+          setPwd(event.target.value);
+        };
+
+        const handleLoginClick = () => {
+          alert(`id: ${id}, pwd: ${pwd}`);
+        };
+        return (
+          <>
+            <h1>상태 끌어올리기</h1>
+            <form>
+              <Id handleIdChange={handleIdChange} />
+              <Pwd handlePwdChange={handlePwdChange} />
+              <button
+                disabled={id.length === 0 || pwd.length === 0}
+                onClick={handleLoginClick}
+              >
+                Login
+              </button>
+            </form>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
